@@ -2,7 +2,7 @@
 - name: module 1
   hosts: server1
   become: yes
-  var_files:
+  vars_files:
    - variable.yml 
   tasks:  
   - 
