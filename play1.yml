@@ -3,11 +3,23 @@
 - hosts: server1
   become: yes
   tasks:
-  - name: install web server on ansible ubuntu node
+  - name: play 1
     apt:
       name: tree
       state: present
 
   - name : create file
     command: touch /home/swapnil/a3
+
+-
+  name: play 2
+  hosts: server1
+  tasks: 
+  - 
+    name: cretae directory
+    command: mkdir /home/swapnil/dir1
+
+  -
+    name: create dirctory
+    command: mkdir /home/swapnil/a3      
     
