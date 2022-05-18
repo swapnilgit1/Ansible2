@@ -7,10 +7,10 @@
   - name : install tree
     apt:
      name: tree
-     state: present
+     state: absent
 
   - name: vs
     apt: 
-     name: vsftpf
+     name: vsftpd
      state: present
 
