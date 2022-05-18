@@ -6,4 +6,4 @@
    - name: apache
      apt :
       name: apache2
-      state: started
+      state: present
