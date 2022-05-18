@@ -16,10 +16,22 @@
   hosts: server1
   tasks: 
   - 
-    name: cretae directory
+    name: create directory
     command: mkdir /home/swapnil/dir1
 
   -
     name: create dirctory
-    command: mkdir /home/swapnil/a3      
+    command: mkdir /home/swapnil/dir2    
+
+-
+  name: play 3
+  hosts: server1
+  become: yes
+  tasks:
+  - 
+    name: install wget
+    apt:
+     name: wget
+     state: present
+
     
