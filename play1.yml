@@ -1,0 +1,7 @@
+-
+ name: first play
+ hosts: webservers
+ tasks:
+ - 
+   name : "create file"
+   command: touch /home/swapnil/a1/txt
