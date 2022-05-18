@@ -1,0 +1,17 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  vars:
+   pkg:         #pkg is variable
+    - vsftpd
+    - tree
+    - wget
+
+  tasks:  
+  - 
+    name : install sw using loop
+    apt: 
+      name: "{{ item }}" 
+      state: present
+    with_items: "{{ pkg }}"
