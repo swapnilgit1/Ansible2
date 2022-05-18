@@ -5,8 +5,29 @@
   tasks:  
   - 
     name : install sw using loop
-    apt: name= "{{ item }}" state= present
+    apt: name= "{{ item }}" state= absent
     with_items:
      - vsftpd
-     - tree  
+     - tree 
+     - wget
 
+
+
+
+
+# ---
+# - name: module 1
+#   hosts: server1
+#   become: yes
+#   tasks:
+#   - name : install tree
+#     apt:
+#      name: tree
+#      state: absent
+
+#   - name: vs
+#     apt: 
+#      name: vsftpd
+#      state: present
+
+#USING LOOP
