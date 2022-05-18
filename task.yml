@@ -1,0 +1,11 @@
+  - 
+    name: task3
+    command: touch /home/swapnil/{{ var3 }}
+
+  - 
+    name: task4
+    command: touch /home/swapnil/{{ var4 }}  
+
+  - 
+    name: task5
+    command: touch /home/swapnil/{{ var5 }}

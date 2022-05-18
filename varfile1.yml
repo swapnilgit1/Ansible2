@@ -17,4 +17,6 @@
     name: task3
     command: touch /home/swapnil/{{ var3 }}
 
+  - include: task.yml  
+
  
