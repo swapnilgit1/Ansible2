@@ -1,7 +1,9 @@
+
 ---
 - hosts: all
-  became: yes
+  become: yes
   tasks:
-  - 
-   name : "create file"
-   command: touch /home/swapnil/a1
+  - name: install web server on ansible ubuntu node
+    apt:
+      name: tree
+      state: present
