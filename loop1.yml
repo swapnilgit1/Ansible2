@@ -1,16 +1,30 @@
 
+# ---
+# - name: module 1
+#   hosts: server1
+#   become: yes
+#   tasks:
+#   - name : install tree
+#     apt:
+#      name: tree
+#      state: absent
+
+#   - name: vs
+#     apt: 
+#      name: vsftpd
+#      state: present
+
+#USING LOOP
 ---
 - name: module 1
   hosts: server1
   become: yes
-  tasks:
-  - name : install tree
+  tasks:  
+  - name : install sw using loop
     apt:
-     name: tree
+     name: {{ item }}
      state: absent
-
-  - name: vs
-    apt: 
-     name: vsftpd
-     state: present
+     with_items:
+       - vsftpd
+       - tree  
 
