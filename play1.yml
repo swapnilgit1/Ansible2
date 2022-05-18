@@ -1,6 +1,6 @@
 
 ---
-- hosts: webservers
+- hosts: server1
   become: yes
   tasks:
   - name: install web server on ansible ubuntu node
@@ -9,5 +9,5 @@
       state: present
 
   - name : create file
-    command: touch /home/swapnil/a2
+    command: touch /home/swapnil/a3
     
