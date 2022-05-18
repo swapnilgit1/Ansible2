@@ -1,8 +1,8 @@
 ---
- name: first play
- hosts: all
- became: yes
- tasks:
- - 
+- name: first play
+  hosts: all
+  became: yes
+  tasks:
+  - 
    name : "create file"
    command: touch /home/swapnil/a1/txt
