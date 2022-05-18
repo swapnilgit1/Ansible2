@@ -3,7 +3,7 @@
   hosts: server1
   become: yes
   vars_files:
-   - variable.yml 
+   - variable.yml   # include vars from variable.yml file 
   tasks:  
   - 
     name: task1
@@ -17,6 +17,6 @@
     name: task3
     command: touch /home/swapnil/{{ var3 }}
 
-  - include: task.yml  
+  - include: task.yml  # include task from task.yml file  
 
  
