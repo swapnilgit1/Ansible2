@@ -1,0 +1,9 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  tasks:
+   - name: apache
+     apt :
+      name: apache2
+      state: started
