@@ -3,10 +3,9 @@
   hosts: server1
   become: yes
   tasks:  
-  - name : install sw using loop
-    apt:
-      name: {{ item }}
-      state: absent
+  - 
+    name : install sw using loop
+    apt: name= "{{ item }}" state= absent
     with_items:
      - vsftpd
      - tree  
