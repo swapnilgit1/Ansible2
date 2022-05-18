@@ -1,0 +1,9 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  vars:
+   servicename: apache2
+  tasks:
+  - name: "variables"
+    service: name={{ servicename }} state=started
