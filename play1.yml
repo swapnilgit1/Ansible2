@@ -1,6 +1,7 @@
--
+---
  name: first play
- hosts: webservers
+ hosts: all
+ became: yes
  tasks:
  - 
    name : "create file"
