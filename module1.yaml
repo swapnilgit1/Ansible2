@@ -1,0 +1,8 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  tasks:
+  -
+   name: copy file
+   copy: src=play1.yml dest=/home/swapnil
