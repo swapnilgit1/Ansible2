@@ -28,5 +28,10 @@
      name: wget
      state: present
 
+  - name: apache install
+    apt :
+      name: apache2
+      state: present   
+
 
     
