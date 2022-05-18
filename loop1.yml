@@ -1,0 +1,16 @@
+
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  tasks:
+  - name : install tree
+    apt:
+     name: tree
+     state: absent
+
+  - name: vs
+    apt: 
+     name: vsftpf
+     state: absent
+
