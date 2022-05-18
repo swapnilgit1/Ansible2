@@ -6,4 +6,5 @@
   -
     name: file
     lineinfile: 
-      path: /home/swapnil line="swapnil"
+      path: /home/swapnil 
+      line: "swapnil"
