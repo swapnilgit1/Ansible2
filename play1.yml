@@ -9,5 +9,5 @@
       state: present
 
   - name : create file
-    command: touch /home/swapnil/a1
+    command: touch /home/swapnil/a2
     
