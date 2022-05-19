@@ -3,12 +3,14 @@
 - hosts: server1
   become: yes
   tasks:
-  - name: play 1
+  - 
+    name: play 1
     apt:
       name: tree
       state: present
 
-  - name : create file
+  - 
+    name : create file
     command: touch /home/swapnil/a3
 
 -
