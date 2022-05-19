@@ -1,0 +1,23 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  tasks:  
+  -
+    name: sleep 60
+    command: sleep 60
+    async: 70
+    poll: 0
+
+  -
+    name: create file
+    command: touch /home/swapnil/sync2 
+
+
+
+    # To run multiple tasks in a playbook concurrently, set poll to 0. When you set
+    #  poll equal to 0, Ansible starts the task and moves on to the next task without 
+    #  waiting for a current task result. In this case, each and every async task will
+    #   run until it either completes, fails or times out (runs longer than its async value).
+      
+    #    The playbook run completes the execution even without checking the status of async tasks.

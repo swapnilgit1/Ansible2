@@ -8,6 +8,5 @@
     command: sleep 120
 
   - 
-    name : paly 2
+    name : play 2
     command: touch /home/swapnil/async1
-      

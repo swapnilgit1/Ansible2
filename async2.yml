@@ -1,0 +1,19 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  tasks:  
+  -
+    name: sleep 60
+    command: sleep 60
+    async: 70
+    poll: 30
+
+  -
+    name: create file
+    command: touch /home/swapnil/sync1  
+
+
+#     async = Maximum runtime. The task will timeout if it exceeds the limit of this parameter.
+
+# poll = This parameter tells how frequently you would like to poll for status
