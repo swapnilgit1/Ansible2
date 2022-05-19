@@ -2,6 +2,7 @@
 ---
 - hosts: server1
   become: yes
+  name: execute play
   tasks:
   - 
     name: play 1

@@ -3,7 +3,7 @@
   hosts: server1
   become: yes
   vars:
-   pkg:         #pkg is variable
+   pkg:         #pkg is dict type variable
     - vsftpd
     - tree
     - wget
