@@ -1,0 +1,30 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  strategy: linear
+  tasks:  
+  -
+     name: 'first task'
+     apt: name='apache2' state='present'
+  - 
+     name: 'second task'
+     command: touch /tmp/strategy_linear.txt
+
+
+
+#      In the above example, playbook has defined two tasks and each task will
+#       run on each host in parallel. First task will start execution on webserver1 and 
+#       sqlserver1 in parallel. Let’s consider if apache2 is already installed on webserver1
+#        then webserver1 has to wait until apache2 gets installed on sqlserver1. Webserver1 
+#        has dependency on sqlserver1 and without waiting for installation to complete 
+#        on sqlserver1, the webserver1 cannot proceed with ‘second task’ this behaviour
+#         of application installation on different hosts is known as LINEAR Strategy.
+
+
+
+# If there is a requirement to install or configure an application independently
+#  on different hosts without any dependency on host, that is also achievable in
+#   Ansible and is known as FREE Strategy. In free strategy, the host does not depend on
+#    each other to 
+#   complete tasks for e.g. webserver will not wait to complete the task on sqlserver.

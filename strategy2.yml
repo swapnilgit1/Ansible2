@@ -1,0 +1,12 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  strategy: free
+  tasks:  
+  -
+     name: 'first task'
+     apt: name='apache2' state='present'
+  - 
+     name: 'second task'
+     command: touch /tmp/strategy_linear.txt

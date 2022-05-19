@@ -1,0 +1,31 @@
+---
+- name: module 1
+  hosts: server1,server3,server2
+  become: yes
+  strategy: free
+  serial: 1
+  tasks:  
+  -
+     name: 'first task'
+     apt: name='apache2' state='present'
+  - 
+     name: 'second task'
+     command: touch /tmp/strategy_linear.txt
+
+
+
+
+
+#      Let’s consider a case, where the admin has to configure/install an application
+#       on a huge list of hosts (might be 100 or 1000). In such a scenario, will the playbook 
+#       start the first task execution on all 100 hosts in parallel? NO. The execution of tasks
+#        on all hosts will not happen in parallel. Ansible controllers take the control of the
+#         host and do the execution in parts. 
+
+
+
+# There is a configuration file for ansible defined on path /etc/ansible/ansible.cfg,
+#  it has a fork value which is 5 by default. So, to handle 1000 host ansible controllers, 
+#  first-run playbooks on the first 5 hosts, and so on. Fork value is editable but make 
+#  sure if you give a large value then ansible host should have good CPU and memory to
+#   make execution fast and unbreakable. 
