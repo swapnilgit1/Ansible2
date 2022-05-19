@@ -1,0 +1,13 @@
+---
+- name: module 1
+  hosts: server1
+  become: yes
+  tasks:  
+  - 
+    name: this is play 1 
+    command: sleep 120
+
+  - 
+    name : paly 2
+    command: touch /home/swapnil/async1
+      
